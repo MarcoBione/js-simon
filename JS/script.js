@@ -19,6 +19,9 @@ Consigli del giorno:
 //generare un resoconto di quali indovinati e quali no
 
 
+//load start btn for start game
+const play = document.getElementById('start');
+play.addEventListener('click', generateNumbers);
 
 //generate bombs
 function generateNumbers (){
@@ -34,7 +37,10 @@ function generateNumbers (){
             numbers.push(randomNumber);
         };
     };
+    console.log(numbers);
     return numbers;
+    
 };
+
 
 
