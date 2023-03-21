@@ -1,0 +1,9 @@
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: darkslateblue;
+}
+
+.container{
+    border: 1px dotted white;
+}
