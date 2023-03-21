@@ -9,3 +9,12 @@ Consigli del giorno:
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 */
 
+//PATH
+//generare 5 numeri casuali e caricarli in un array
+//controllare che i numeri caricati siano tutti differenti
+//mostrare i 5 numeri per 30 secondi
+//nascondere i 5 numeri creati
+//mostrare i 5 campi di input
+//confrontare i numeri scritti con quelli creati
+//generare un resoconto di quali indovinati e quali no
+
