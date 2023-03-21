@@ -19,11 +19,6 @@ Consigli del giorno:
 //generare un resoconto di quali indovinati e quali no
 
 
-//load start btn for start game
-const play = document.getElementById('start');
-play.addEventListener('click', playgame);
-
-
 function playgame(){
 
     //generate bombs
@@ -43,6 +38,20 @@ function playgame(){
         return numbers;
     };
 
+    function controlNumbers(){
+       
+        let numbers = document.querySelectorAll('input');
+         //array of userNumbers
+         const userNumbers = [];
+
+         numbers.forEach(function(input) {
+            userNumbers.push(input.value);
+         });
+
+         //check array of userNumber
+         console.log(userNumbers);
+    }
+
     //read casualNumbers array
     const casualNumbers = generateNumbers();
     console.log(casualNumbers);
@@ -61,9 +70,17 @@ function playgame(){
         display.remove();
         input.classList.remove('d-none');
     }, 3000);
+
+    //check user numbers
+    const check = document.getElementById('validate');
+    check.addEventListener('click', controlNumbers);
     
 };
 
+
+//load start btn for start game
+const play = document.getElementById('start');
+play.addEventListener('click', playgame);
 
 
 
