@@ -53,6 +53,12 @@ function playgame(){
     display.classList.add('text-warning','fs-3');
     console.log(display);
     document.querySelector('#numbers').appendChild(display);
+
+    //remove display after 30 seconds
+    setTimeout(() => {
+        display.remove();
+    }, 30000);
+    
 };
 
 
