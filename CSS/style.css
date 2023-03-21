@@ -4,6 +4,6 @@
     background-color: darkslateblue;
 }
 
-.container{
+.container, .playarea{
     border: 1px dotted white;
 }
