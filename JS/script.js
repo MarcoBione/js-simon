@@ -18,3 +18,23 @@ Consigli del giorno:
 //confrontare i numeri scritti con quelli creati
 //generare un resoconto di quali indovinati e quali no
 
+
+
+//generate bombs
+function generateNumbers (){
+    //create array w/numbers
+    const numbers = [];
+
+    //cycle for create 5 randomnumbers
+    while(numbers.length < 5){
+        //create randomnumber
+        let randomNumber = Math.floor((Math.random() * 100) + 1);
+        //check if is already exist
+        if(!numbers.includes(randomNumber)){
+            numbers.push(randomNumber);
+        };
+    };
+    return numbers;
+};
+
+
