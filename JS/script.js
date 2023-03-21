@@ -54,10 +54,13 @@ function playgame(){
     console.log(display);
     document.querySelector('#numbers').appendChild(display);
 
+    let input = document.querySelector('#userinput');
+
     //remove display after 30 seconds
     setTimeout(() => {
         display.remove();
-    }, 30000);
+        input.classList.remove('d-none');
+    }, 3000);
     
 };
 
