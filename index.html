@@ -39,13 +39,19 @@
 
                     <div class="numbers"></div>
 
-                    <div class="userinput">
+                    <div class="userinput p-4">
 
-                        <input type="number" id="firstnumber">
-                        <input type="number" id="secondnumber">
-                        <input type="number" id="thirdnumber">
-                        <input type="number" id="fourthnumber">
-                        <input type="number" id="fifthnumber">
+                        <div class="inputs pb-3">
+
+                            <input type="number" id="firstnumber" required max="100" min="1">
+                            <input type="number" id="secondnumber" required max="100" min="1">
+                            <input type="number" id="thirdnumber" required max="100" min="1">
+                            <input type="number" id="fourthnumber" required max="100" min="1">
+                            <input type="number" id="fifthnumber" required max="100" min="1">
+
+                        </div>
+                        
+                        <button id="validate" class="btn btn-outline-light">Controlla</button>
 
                     </div>
 
