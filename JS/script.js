@@ -21,26 +21,44 @@ Consigli del giorno:
 
 //load start btn for start game
 const play = document.getElementById('start');
-play.addEventListener('click', generateNumbers);
+play.addEventListener('click', playgame);
 
-//generate bombs
-function generateNumbers (){
-    //create array w/numbers
-    const numbers = [];
 
-    //cycle for create 5 randomnumbers
-    while(numbers.length < 5){
-        //create randomnumber
-        let randomNumber = Math.floor((Math.random() * 100) + 1);
-        //check if is already exist
-        if(!numbers.includes(randomNumber)){
-            numbers.push(randomNumber);
+function playgame(){
+
+    //generate bombs
+    function generateNumbers (){
+        //create array w/numbers
+        const numbers = [];
+
+        //cycle for create 5 randomnumbers
+        while(numbers.length < 5){
+            //create randomnumber
+            let randomNumber = Math.floor((Math.random() * 100) + 1);
+            //check if is already exist
+            if(!numbers.includes(randomNumber)){
+                numbers.push(randomNumber);
+            };
         };
+        return numbers;
     };
-    console.log(numbers);
-    return numbers;
-    
+
+    //read casualNumbers array
+    const casualNumbers = generateNumbers();
+    console.log(casualNumbers);
+
+    //display casualNumbers
+    let display = document.createElement('div');
+    display.innerText =`${casualNumbers}`;
+    display.classList.add('text-warning','fs-3');
+    console.log(display);
+    document.querySelector('#numbers').appendChild(display);
 };
+
+
+
+
+
 
 
 
