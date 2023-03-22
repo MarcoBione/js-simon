@@ -104,7 +104,7 @@ function playgame() {
     setTimeout(() => {
         display.remove();
         input.classList.remove('d-none');
-    }, 3000);
+    }, 30000);
 
     //check user numbers
     const check = document.getElementById('validate');
