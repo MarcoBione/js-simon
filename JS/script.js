@@ -19,48 +19,83 @@ Consigli del giorno:
 //generare un resoconto di quali indovinati e quali no
 
 
-function playgame(){
+function playgame() {
 
     //generate bombs
-    function generateNumbers (){
+    function generateNumbers() {
         //create array w/numbers
         const numbers = [];
 
         //cycle for create 5 randomnumbers
-        while(numbers.length < 5){
+        while (numbers.length < 5) {
             //create randomnumber
             let randomNumber = Math.floor((Math.random() * 100) + 1);
             //check if is already exist
-            if(!numbers.includes(randomNumber)){
+            if (!numbers.includes(randomNumber)) {
                 numbers.push(randomNumber);
             };
         };
+        //console.log(numbers);
         return numbers;
     };
 
-    function controlNumbers(){
-       
-        let numbers = document.querySelectorAll('input');
-         //array of userNumbers
-         const userNumbers = [];
+    function controlNumbers() {
 
-         numbers.forEach(function(input) {
+        let inputNumbers = document.querySelectorAll('input');
+        //array of userNumbers
+        const userNumbers = [];
+
+        /*
+        inputNumbers.forEach(function (input) {
             userNumbers.push(input.value);
-         });
+        });
+        */
 
-         //check array of userNumber
-         console.log(userNumbers);
+        //cycle for check the array of usernums
+        for(let i = 0; i < inputNumbers.length; i++){
+            if(!userNumbers.includes(inputNumbers[i].value)){
+                userNumbers.push(parseInt(inputNumbers[i].value));
+            };
+        };
+
+        //console.log(userNumbers);
+        return userNumbers;
     }
 
+    function responceNumbers(){
+
+        //load user numbers
+        let userNums = controlNumbers();
+        console.log(userNums);
+        
+        //array num indovinati
+        const indovinati = [];
+
+        //check usernumbers vs pc numbers
+        for (let i = 0; i < userNums.length; i++) {
+            
+            if(casualNumbers.includes(userNums[i])){
+                indovinati.push(userNums[i]);
+            }
+
+        }
+
+        console.log(indovinati);
+        document.querySelector('.results').innerHTML=`
+        <p class="text-white fs-4"> hai indovinato i seguenti numeri : ${indovinati} - il tuo punteggio è :${indovinati.length}</p>
+        `;
+
+    }    
+
+    
+    //console.log(casualNumbers);
     //read casualNumbers array
     const casualNumbers = generateNumbers();
-    console.log(casualNumbers);
 
     //display casualNumbers
     let display = document.createElement('div');
-    display.innerText =`${casualNumbers}`;
-    display.classList.add('text-warning','fs-3');
-    console.log(display);
+    display.innerText = `${casualNumbers}`;
+    display.classList.add('text-warning', 'fs-3');
     document.querySelector('#numbers').appendChild(display);
 
     let input = document.querySelector('#userinput');
@@ -73,8 +108,8 @@ function playgame(){
 
     //check user numbers
     const check = document.getElementById('validate');
-    check.addEventListener('click', controlNumbers);
-    
+    check.addEventListener('click', responceNumbers);
+
 };
 
 
